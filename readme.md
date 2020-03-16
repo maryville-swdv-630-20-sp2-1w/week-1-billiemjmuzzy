@@ -23,8 +23,8 @@
 
 ![implementation-interface](implementation-interface.png)
 
- In order to design an interface structure so that all of the possible implementations could store data effectively, I would:
- 
+In order to design an interface structure so that all of the possible implementations could store data effectively, I would:
+
 - Ensure that a change in implementation would not require a change to the users' code
 - Apply abstract thinking so it wouldn't matter if the user is using local or cloud storage
 - Implementation would be hidden

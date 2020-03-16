@@ -1,3 +1,6 @@
+from collections.abc import Sized
+
+
 class Teams:
     def __init__(self, members):
         self.__myTeam = members
@@ -12,7 +15,8 @@ class Teams:
             return False
 
     def __iter__(self):
-        return iter(self.__myTeam)
+        for member in self.__myTeam:
+            yield member
 
 
 def main():
@@ -30,14 +34,13 @@ def main():
     # prints out the members
     # returns John, Steve, Tim
     print("The members of classmates are: ")
-    name = iter(classmates)
-    for name in classmates:
-        print(f"\t- {name}")
+    for classmate in classmates:
+        print(f"\t- {classmate}")
 
     # check to see if classmates implements the _len_ method
     # returns True
     implements = "Classmates implements the __len__ method is"
-    if hasattr(classmates, '__len__'):
+    if isinstance(classmates, Sized):
         print(f"{implements} {True}")
     else:
         print(f"{implements}  {False}")
